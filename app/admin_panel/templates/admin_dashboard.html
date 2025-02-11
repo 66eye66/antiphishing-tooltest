@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Phishing Detection Configuration</h1>
+    <h2>Phishing Rules</h2>
+    <ul>
+        {% for rule in rules %}
+            <li>{{ rule.rule_name }} - {{ rule.action }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Whitelist</h2>
+    <ul>
+        {% for domain in whitelist %}
+            <li>{{ domain.domain }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Blacklist</h2>
+    <ul>
+        {% for domain in blacklist %}
+            <li>{{ domain.domain }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Alert Thresholds</h2>
+    <ul>
+        {% for threshold in thresholds %}
+            <li>{{ threshold.threshold }} attempts</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
